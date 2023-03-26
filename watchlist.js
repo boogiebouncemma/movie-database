@@ -55,7 +55,7 @@ function displayMovies() {
         </div>`
 
     } else {
-        watchlistCnt.innerHTML = movieList.map(movie => fetchMovie(movie))
+        watchlistCnt.innerHTML = movieList.map(movie => fetchMovie(movie)).join("")
     }
 }
 
