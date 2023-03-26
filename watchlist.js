@@ -45,15 +45,17 @@ function fetchMovie(id) {
 }
 
 function displayMovies() {
-    if (movieList.length >0) {
-        watchlistCnt.innerHTML = movieList.map(movie => fetchMovie(movie))
-    } else {
+    if (!movieList) {
         watchlistCnt.innerHTML = `     
-            <div>Your watchlist is looking a little empty...</div>
-            <a href="index.html">
-                <img src="./img/plusIcon.png"> Let's add some movies!
-            </a>`
+        <div>Your watchlist is looking a little empty...</div>
+        <a href="index.html">
+            <img src="./img/plusIcon.png"> Let's add some movies!
+        </a>`
+
+    } else {
+        watchlistCnt.innerHTML = movieList.map(movie => fetchMovie(movie))
     }
 }
+
 
 displayMovies()
